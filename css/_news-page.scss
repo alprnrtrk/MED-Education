@@ -1,0 +1,24 @@
+.news--page{
+    background-image: none;
+
+    .news__body__news-slider, .news__body-events__slider{
+        @include flex(row, flex-start, flex-start, wrap);
+
+        gap: 10px;
+
+        .news__body__news-slider--each, .news__body-events__slider--each{
+            width: calc((100% / 3) - 10px);
+            padding: 0;
+            margin-bottom: 20px;
+            list-style: none;
+
+            @include devices(xl){
+                width: 100%;
+            }
+        }
+
+        @include devices(xl){
+            @include flex(column, center, center);
+        }
+    }
+}

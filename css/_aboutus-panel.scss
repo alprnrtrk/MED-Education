@@ -1,0 +1,43 @@
+.abouus-panels {
+    @include wrap;
+    @include flex();
+
+    &__each {
+        @include center;
+
+        width: 50%;
+        aspect-ratio: 1/.5;
+        color: #fff;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 500;
+
+        &--left {
+            background-color: $color--primary;
+        }
+
+        &--right {
+            background-color: $color--secondary;
+        }
+
+        p{
+            max-width: 75%;
+            width: 100%;
+            line-height: 25px;
+
+            @include devices(xl){
+                min-width: 100%;
+            }
+        }
+
+        @include devices(xl){
+            width: 100%;
+            aspect-ratio: unset;
+            padding: 20px
+        }
+    }
+
+    @include devices(xl){
+        @include flex(column, center, center);
+    }
+}

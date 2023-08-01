@@ -1,0 +1,75 @@
+.from-overseer {
+    @include wrap;
+
+    margin-bottom: 35px;
+
+    .wrapper{
+        @include flex(row, space-between, center);
+
+        padding-bottom: 35px;
+        border-bottom: 2px solid $color--primary;
+
+        @include devices(xl){
+            @include flex(column, center, center);
+        }
+    }
+
+    img {
+        width: 30%;
+        aspect-ratio: 457/452;
+        object-fit: cover;
+
+        @include devices(xl){
+            width: 100%;
+        }
+    }
+
+    &__content {
+        @include flex(column, space-between, center);
+
+        width: 70%;
+        text-align: center;
+
+        p {
+            max-width: 750px;
+            width: 100%;
+            margin-bottom: 70px;
+            font-size: 25px;
+            line-height: 37px;
+
+            &::before {
+                content: "“";
+            }
+
+            &::after {
+                content: "”";
+            }
+        }
+
+        h2,
+        h3 {
+            font-weight: normal;
+        }
+
+        h2 {
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 18px;
+        }
+
+        @include devices(xl){
+            width: 100%;
+        }
+    }
+    
+    p{
+        padding: 35px 0;
+
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+}

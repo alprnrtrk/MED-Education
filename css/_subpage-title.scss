@@ -1,0 +1,68 @@
+.subpage-title {
+    @include wrap();
+
+    // margin-top: var(--page-offset)!important;
+
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 90px;
+
+    &__beared-links {
+        @include flex(row, center, center);
+
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        li {
+            list-style: none;
+            text-transform: capitalize;
+            font-size: 13px;
+            font-weight: bold;
+            color: #939393;
+
+            &::after {
+                content: "/";
+                margin: 0 5px;
+            }
+
+            &:last-child {
+                &::after {
+                    display: none;
+                }
+            }
+
+            a {
+                display: inline;
+                font-size: inherit;
+                color: inherit;
+                transition: .2s;
+
+                &:hover {
+                    color: #000;
+                }
+            }
+        }
+
+        @include devices(xl) {
+            display: none;
+        }
+    }
+
+    &__title {
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 32px;
+        font-weight: bold;
+        color: $color--secondary;
+
+        span{
+            font-size: inherit;
+            color: $color--primary;
+        }
+    }
+
+    @include devices(xl){
+        min-height: 0;
+    }
+}

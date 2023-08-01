@@ -1,0 +1,40 @@
+.tabs{
+    @include wrap();
+    @include flex(row, center, center);
+
+    gap: 30px;
+    margin: 50px 0;
+
+    &__each{
+        padding: 10px 90px;
+        border: 1px solid $color--primary;
+        border-radius: 100px;
+        transition: .2s;
+
+        span{
+            font-size: 24px;
+        }
+
+        &:hover{
+            transform: translateY(-5px);
+            background-color: $color--primary;
+            color: #fff;
+        }
+
+        &--active{
+            background-color: $color--primary;
+            color: #fff;
+        }
+
+        @include devices(xl){
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    @include devices(xl){
+        @include flex(column, center, center);
+
+        gap: 10px;
+    }
+}

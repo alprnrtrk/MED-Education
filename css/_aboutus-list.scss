@@ -1,0 +1,49 @@
+.aboutus-list {
+    @include wrap;
+
+    &__list{
+        .panel {
+            @include flex(row, center, center);
+
+            gap: 50px;
+            padding: 75px 0;
+
+            border-top: 2px solid $color--secondary;
+
+            &:nth-child(even){
+                flex-direction: row-reverse;
+
+                @include devices(xl){
+                    @include flex(column, center, center);
+                }
+            }
+
+            &__img {
+                width: 50%;
+                aspect-ratio: 635/402;
+                object-fit: cover;
+
+                box-shadow: 0 125px 100px -100px rgba(0, 0, 0, 0.3);
+
+                @include devices(xl){
+                    width: 100%;
+                    aspect-ratio: 1/1;
+                }
+            }
+        
+            &__text {
+                font-size: 18px;
+                line-height: 25px;
+                color: $color--secondary;
+
+                @include devices(xl){
+                    text-align: center;
+                }
+            }
+
+            @include devices(xl){
+                @include flex(column, center, center);
+            }
+        }
+    }
+}

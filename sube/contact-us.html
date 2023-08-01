@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Sayfa</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/slick.css">
+    <link rel="stylesheet" href="../css/animate.min.css">
+</head>
+
+<body style="background-color: #fff;">
+
+    <!-- başlangıç navbar -->
+    <section class="navbar navbar--alt">
+        <a class="navbar__logo" href="index.html">
+            <img src="../img/navbar-white-logo.png" alt="">
+            <img class="text" src="../img/navbar-white-text.png" alt="">
+        </a>
+        <div class="navbar__collapse">
+            <ul class="navbar__collapse__navs">
+                <li class="navbar__collapse__navs--each">
+                    <a>Kurumsal <i class="fa-solid fa-down"></i></a>
+                </li>
+                <li class="navbar__collapse__navs--each">
+                    <a href="locations.html">Kurumlarımız</a>
+                </li>
+                <li class="navbar__collapse__navs--each">
+                    <a href="guidence.html">Rehberlik</a>
+                </li>
+                <li class="navbar__collapse__navs--each">
+                    <a href="store.html">Med Store</a>
+                </li>
+                <li class="navbar__collapse__navs--each">
+                    <a href="ik.html">İnsan Kaynakları</a>
+                </li>
+                <li class="navbar__collapse__navs--each">
+                    <a href="contact-us.html">İletişim</a>
+                </li>
+                <li class="navbar__collapse__navs--each special">
+                    <a href="pre-sign.html">Online Başvuru</a>
+                </li>
+            </ul>
+            <!-- fixed links sayfada sabit dönen sosyal medya ikonları ve iletişim  bilgilerinin bulunduğu element -->
+        </div>
+
+        <div class="fixed-links">
+            <ul class="fixed-links__left">
+                <li class="fixed-links__left--each">
+                    <a target="_blank" href="#">
+                        <i class="fa-solid fa-phone"></i>
+                        <!-- masa üstünde yalnızca ikonlar var lakin mobilde <span></span> içeriisndeki bilgiler gözükecektir -->
+                        <span>0000 000 00 00</span>
+                    </a>
+                </li>
+                <li class="fixed-links__left--each">
+                    <a target="_blank" href="#">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>mail adresi</span>
+                    </a>
+                </li>
+                <li class="fixed-links__left--each">
+                    <a target="_blank" href="#">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>lokasyon</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="fixed-links__right">
+                <li class="fixed-links__right--each">
+                    <a target="_blank" href="#">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <span>facebook adı</span>
+                    </a>
+                </li>
+                <li class="fixed-links__right--each">
+                    <a target="_blank" href="#">
+                        <i class="fa-brands fa-twitter"></i>
+                        <span>twitter adı</span>
+                    </a>
+                </li>
+                <li class="fixed-links__right--each">
+                    <a target="_blank" href="#">
+                        <i class="fa-brands fa-instagram"></i>
+                        <span>instagram adı</span>
+                    </a>
+                </li>
+                <li class="fixed-links__right--each">
+                    <a target="_blank" href="#">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                        <span>linkdin hesabı</span>
+                    </a>
+                </li>
+                <li class="fixed-links__right--each">
+                    <a target="_blank" href="#">
+                        <i class="fa-brands fa-youtube"></i>
+                        <span>youtube adresi</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- mobil için menu açma kapama tuşu -->
+        <button class="toggle">
+            <span></span><span></span><span></span>
+        </button>
+    </section>
+    <!-- bitiş navbar -->
+
+    <section class="intro intro--alt intro--sub-title" style="background-image: url(../img/intro-sub.jpg);">
+        <div class="content">
+            <div>
+                <h1>Ankara</h1>
+                <h2>Ahi Mesut - Etimesgut
+                    <br> Şubesi
+                </h2>
+            </div>
+
+            <h3>Bize Ulaşın</h3>
+        </div>
+    </section>
+
+    <section class="contact-us contact-us--sub">
+        <ul>
+            <li>
+                <i class="fa-solid fa-house"></i>
+                Merkez Mh. Atlas Sk. No:2-4 
+                Gaziosmanpaşa / İSTANBUL
+            </li>
+            <li>
+                <i class="fa-solid fa-phone"></i>
+                0212 563 09 08
+            </li>
+            <li>
+                <i class="fa-solid fa-phone"></i>
+                0212 563 09 08
+            </li>
+            <li>
+                <i class="fa-solid fa-envelope"></i>
+                info@medfenbilimleri.com.tr
+
+            </li>
+        </ul>
+        <img src="../img/contactus.jpg" alt="">
+    </section>
+
+    <section class="pre-sign pre-sign--contactus">
+        <div class="wrapper">
+            <h2 style="background-color: #fff;">Franchise Başvurusu Yapın?</h2>
+        </div>
+        <div class="pre-sign__form">
+            <img src="../img/assets/formbg.jpg" alt="">
+            <form action="">
+                <ul class="inputs">
+                    <li class="inputs__each inputs__each--name">
+                        <label for="">ad</label>
+                        <input maxlength="15" name="name" aria-label="name" type="text" placeholder="adınız">
+                    </li>
+                    <li class="inputs__each inputs__each--surname">
+                        <label for="">soyad</label>
+                        <input maxlength="15" name="surname" aria-label="surname" type="text" placeholder="soyadınız">
+                    </li>
+                    <li class="inputs__each inputs__each--phone-number">
+                        <label for="">telefın numarası</label>
+                        <input id="phone" name="phone" aria-label="phone number" type="text"
+                            placeholder="(***) *** ** **">
+                    </li>
+                    <li class="inputs__each inputs__each--mail">
+                        <label for="">e posta adresiniz</label>
+                        <input name="email" aria-label="mail adress" type="text" placeholder="e postanız">
+                    </li>
+                    <li class="inputs__each inputs__each--selection">
+                        <label for="">kurs seçiniz</label>
+                        <div class="custom-select">
+                            <select name="" id="">
+                                <option value="0">kurs seçiniz</option>
+                                <option value="1">kurs 1</option>
+                                <option value="2">kurs 2</option>
+                                <option value="3">kurs 3</option>
+                                <option value="4">kurs 4</option>
+                                <option value="5">kurs 5</option>
+                            </select>
+                        </div>
+                    </li>
+                </ul>
+                <div class="inputs__submit">
+                    <label class="container">
+                        <input type="checkbox" checked="checked">
+                        <span class="checkmark"></span>
+                        <h4>KVKK Bilgilendirmesini okudum ve onaylıyorum.</h4>
+                    </label>
+                    <button aria-label="submit" type="submit">gönder</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3014.8922225479023!2d29.163509311941795!3d40.91810897124398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac57c6de66487%3A0xefeace1e7b702997!2sPointix%20Bili%C5%9Fim%20Teknolojileri!5e0!3m2!1str!2str!4v1684947870964!5m2!1str!2str" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <!-- bitiş haberler ve etkinlikler -->
+    <footer class="footer footer--sub">
+        <div class="footer__bottom">
+            <div class="links">
+                <a href="404.html">KVKK</a>
+                <a href="404.html"> Çerez Politikası</a>
+            </div>
+            <div class="trademark">
+                COPYRIGHT @ 2022 MED EĞİTİM KURUMLARI | Tüm Hakları Saklıdır.
+
+            </div>
+        </div>
+        <a href="404.html" class="whatsapp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </footer>
+    <!-- başlangıç mobil sosyal medya açma tuşu -->
+    <!-- bu button elementi her sayfada bulunsun zira mobilde sosyal medya kısmını açacak tuş olduğu için her sayfada bulumalu -->
+    <button class="fixed-links__toggler">
+        <i class="fa-solid fa-share-nodes"></i>
+    </button>
+    <!-- bitiş mobil sosyal medya açma tuşu -->
+
+    <script src="../js/query.js"></script>
+    <script src="../js/slick.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="https://kit.fontawesome.com/89424def0a.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,754 @@
+:root {
+    --page-offset: 65px;
+    --viewport: 100vh;
+    --vh: 100px;
+}
+
+.navbar {
+    @include flex(row, space-between, center);
+
+    width: 100%;
+    position: relative;
+    z-index: 1000;
+    padding: 20px 20px 20px 160px;
+    background-color: $color--navbar;
+    box-shadow: 0 0 20px 0 transparentize($color--secondary, .75);
+
+    *{
+        &::-webkit-scrollbar {
+            display: none;
+          }
+    }
+
+    &.sticky {
+        position: fixed;
+        z-index: 900;
+        top: 0;
+        width: 100%;
+        box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    &__logo {
+        position: relative;
+        z-index: 900;
+        padding: 10px;
+
+        picture {
+            @include center();
+        }
+
+        img {
+            @include devices(xl) {
+                width: 50%;
+            }
+        }
+    }
+
+    &__collapse {
+        overflow-y: scroll;
+
+        &__navs {
+            @include flex(row, flex-start, center);
+
+            list-style: none;
+
+            &--each {
+
+                @include flex(row, center, center, wrap);
+
+                @include devices(xl){
+                    &.mega-menu {
+                        &>a {
+                            @include flex(row-reverse);
+    
+                            &::after {
+                                margin-right: 20px;
+                                content: "\f0dd";
+                                display: inline-block;
+                                font-family: "Font Awesome 5 Free";
+                                font-weight: 900;
+                                font-size: 20px;
+                                transition: .2s;
+                                transform: translate();
+                            }
+                        }
+    
+                        &.active {
+                            &>a {
+                                &::after {
+                                    transform: rotate(-180deg) translateY(-50%);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                a {
+                    position: relative;
+                    margin: 0 15px;
+                    font-weight: 700;
+                    color: $color--secondary;
+                    border-radius: 5px;
+                    transition: .2s;
+                    text-align: center;
+                    cursor: pointer;
+
+                    &::before {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        top: calc(100% + 10px);
+                        width: 0;
+                        height: 2px;
+                        background-color: $color--primary;
+                        transition: .2s;
+                    }
+
+                    &:hover {
+                        &::before {
+                            width: 100%;
+                        }
+                    }
+
+                    @include devices(xl) {
+                        font-size: 25px;
+
+                        &::before {
+                            display: none;
+                        }
+                    }
+
+                    @include devices(xxl){
+                        margin: 0 10px;                        
+                        font-size: 13px;
+                    }
+                }
+
+                .mega-menu {
+                    @include flex(row, center, center);
+
+                    top: 100%;
+                    left: 0;
+                    position: absolute;
+                    z-index: 100;
+                    opacity: 0;
+                    padding: 30px;
+                    width: 100%;
+                    background-color: $color--navbar;
+                    box-shadow: 0 20px 20px -20px transparentize($color--secondary, .75);
+                    pointer-events: none;
+                    transform: translate(0, -50px);
+                    transition: .2s;
+
+                    &.active {
+                        opacity: 1;
+                        pointer-events: all;
+                        transform: translate(0);
+                    }
+
+                    &:hover {
+                        opacity: 1;
+                        pointer-events: all;
+                        transform: translate(0);
+                    }
+
+                    &__list {
+                        @include flex(row, center, center, wrap);
+
+                        width: 50%;
+
+                        list-style: none;
+
+                        &--each {
+                            @include flex(row, center, center);
+                            width: 50%;
+
+                            a {
+                                position: relative;
+                                text-align: left;
+                                width: 250px;
+                                font-weight: 500;
+                                margin: 20px 0;
+                                border-radius: 0;
+
+                                &::before {
+                                    position: absolute;
+                                    top: calc(100% + 20px);
+                                    display: block;
+                                    width: 100%;
+                                    height: 1px;
+                                    background-color: $color--primary;
+                                }
+                            }
+
+                            i {
+                                position: relative;
+                                margin-right: 25px;
+                                color: $color--primary;
+                                transition: .2s;
+
+                                &::after {
+                                    content: "";
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50%;
+                                    width: 20px;
+                                    height: 14px;
+                                    /* as the half of the width */
+                                    background-color: $color--primary;
+                                    border-top-left-radius: 101px;
+                                    /* 100px of height + 10px of border */
+                                    border-top-right-radius: 101px;
+                                    /* 100px of height + 10px of border */
+                                    border: 2px solid $color--primary;
+                                    border-bottom: 0;
+                                    background-color: transparent;
+                                    transform: translate(-80%, -50%) rotate(-90deg);
+                                }
+                            }
+
+                            &:hover {
+                                i {
+                                    transform: translateX(100%);
+                                }
+                            }
+
+                        }
+                    }
+
+                    img {
+                        width: 555px;
+                        aspect-ratio: 16/9;
+                    }
+
+                    @include devices(xl) {
+                        @include flex(column, center, flex-end);
+
+                        position: static;
+                        z-index: 10;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 0;
+                        opacity: 0;
+                        padding: 0;
+                        transform: translateY(-100%);
+                        max-width: 100%;
+                        box-shadow: none;
+
+                        &__list {
+                            @include flex(column, center, flex-end);
+
+                            width: 100%;
+                            padding-top: 10px;
+
+                            a {
+                                margin: 5px 15px;
+                                text-align: right !important;
+
+                                font-size: 15px;
+                                font-weight: 500 !important;
+
+                                &::before {
+                                    display: none !important;
+                                }
+                            }
+
+                            i {
+                                display: none;
+                            }
+                        }
+
+                        img {
+                            display: none;
+                        }
+
+                        &:hover {
+                            opacity: 0;
+                            pointer-events: none;
+                            transform: translateY(-100%);
+                        }
+
+                        &.active {
+                            height: auto;
+                            opacity: 1;
+                            pointer-events: all;
+                        }
+                    }
+                }
+
+                &.special {
+                    a {
+                        padding: 20px 10px;
+                        border-radius: 100px;
+                        background: $color--secondary;
+                        background: linear-gradient(45deg, $color--secondary 25%, $color--primary 75%);
+                        background-size: 500% 100%;
+                        background-position: 0% 0%;
+                        color: $color--navbar;
+                        transition: .5s;
+
+                        &:hover {
+                            background-position: 100% 100%;
+                        }
+
+                        &::before {
+                            display: none;
+                        }
+                    }
+                }
+
+                @include devices(xl) {
+                    @include flex(row, flex-end, center, wrap);
+                }
+            }
+
+            @include devices(xl) {
+                @include flex(column, center, flex-end);
+
+                padding: 50px 15px 0 0;
+
+                &--each {
+                    margin: 15px 0;
+
+                    &.special {
+                        a {
+                            padding: 10px 15px;
+                        }
+                    }
+                }
+            }
+        }
+
+
+        @include devices(xl) {
+            @include flex(column, space-between, center);
+            position: absolute;
+            z-index: 500;
+
+            top: 100%;
+            transform: translateY(-220%);
+            background: $color--navbar;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            transition: .2s;
+        }
+
+        &.active {
+            display: flex;
+            transform: translateY(0);
+        }
+
+    }
+
+    .toggle {
+        @include flex(column, center, center);
+
+        display: none;
+        top: 0;
+        right: 0;
+        gap: 10px;
+        min-width: 40px;
+        aspect-ratio: 1/1;
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+        transition: .2s;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        span {
+            display: block;
+            width: 30px;
+            height: 2px;
+            background-color: #000;
+            border-radius: 1000px;
+            transition: .2s;
+        }
+
+        &.active {
+            span:nth-child(1) {
+                width: 35px;
+                transform-origin: top left;
+                transform: rotate(45deg);
+            }
+
+            span:nth-child(2) {
+                opacity: 0;
+            }
+
+            span:nth-child(3) {
+                width: 35px;
+                transform-origin: left bottom;
+                transform: rotate(-45deg);
+            }
+        }
+
+        @include devices(xl) {
+            display: flex;
+            position: absolute;
+            z-index: 1000;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%) !important;
+        }
+    }
+
+    @include devices(xl) {
+
+        justify-content: center;
+        padding: 0;
+    }
+
+    &--alt{
+        position: fixed;
+        background-color: transparent;
+        transition: .2s;
+        box-shadow: none;
+
+        &.sticky{
+            background-color: #fff;
+
+            .navbar__logo .text{
+                filter: invert(1);
+            }
+
+            .toggle{
+                span{
+                    background-color: #000;
+                }
+
+                &.active{
+                    span{
+                        background-color: #fff;
+                    }
+                }
+            }
+        }
+
+        .navbar__logo{
+            .text{
+                @include devices(xl){
+                    display: none;
+                }
+            }
+
+            @include devices(xl){
+                @include center;
+                
+                margin: 0!important;
+                padding: 10px!important;
+            }
+        }
+
+        .toggle{
+            @include devices(xl){
+                margin-right: 0!important;
+            }
+        }
+
+        .navbar__collapse{
+            @include flex(column, center, flex-end);
+
+            transform: translateX(100%);
+
+            position: fixed;
+            z-index: 10000;
+            right: 0;
+            top: 0;
+            width: 100%;
+            min-height: 100vh;
+            background-color: transparentize(lighten($color--secondary, 25%), .25);
+
+            transition: .2s;
+
+            &__navs{
+                @include flex(column, center, flex-end);
+
+                padding: 100px;
+                max-width: 40%;
+                width: 100%;
+                min-height: 100vh;
+                background-color: $color--primary;
+
+                &--each{
+                
+                    &.special{
+                        a{
+                            background: #fff!important;
+                            color: #000;
+                        }
+                    }
+
+                    a{
+                        margin-bottom: 20px;
+                        font-size: 30px!important;
+                        color: #fff;
+                        font-weight: 400;
+
+                        &:hover{
+                            transform: translateX(-10px);
+                        }
+
+                        @include devices(xl){
+                            margin-bottom: 10px;
+                            font-size: 25px!important;
+                        }
+                    }
+
+                    &:last-child{
+                        margin-top: 100px;
+                    }
+                }
+
+                @include devices(xl){
+                    max-width: 100%;
+                    padding: 0;
+                }
+            }
+
+            &.active{
+                transform: translate(0);
+            }
+        }
+
+        .toggle{
+            position: relative;
+            z-index: 10000;
+            display: block;
+            margin-right: 150px;
+
+            span{
+                margin-top: 5px;
+                width: 50px;
+                height: 3px;
+                background-color: #fff;
+            }
+
+            &.active{
+                span{
+                    transform: none!important;
+                    opacity: 1!important;
+                }
+            }
+
+            @include devices(xl){
+                position: absolute;
+                top: 50%!important;
+                right: 25px!important;
+                transform: translateY(-35%)!important;
+            }
+        }
+
+        @include devices(xl){
+            @include flex(row, center, center);
+        }
+    }
+}
+
+.fixed-links {
+    position: fixed;
+    isolation: isolate;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+
+    &__toggler{
+        display: none;
+    }
+
+    span{
+        display: none;
+    }
+
+    &__left,
+    &__right {
+        @include flex(column, center, center);
+
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100px;
+        height: 250px;
+        background-color: #fff;
+        box-shadow: 0 0 20px 0 transparentize($color--secondary, .75);
+        list-style: none;
+        pointer-events: all;
+
+        &--each {
+            a {
+                padding: 10px;
+            }
+        }
+
+        @include devices(xl){
+            pointer-events: none;
+        }
+    }
+
+    &__left {
+        left: 0;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 1px;
+            height: 50%;
+            background-color: $color--secondary;
+        }
+
+        a {
+            position: relative;
+            z-index: 1;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 100px;
+            background-color: #fff;
+            color: $color--primary;
+            transition: .2s;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+
+            i {
+                font-size: 30px;
+            }
+        }
+
+    }
+
+    &__right {
+        right: 0;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+
+        &--each {
+            a {
+                @include center;
+
+                width: 40px;
+                aspect-ratio: 1/1;
+                padding: 10px;
+                margin: 2px 0;
+                border-radius: 100%;
+                border: 1px solid $color--primary;
+                color: $color--primary;
+                transition: .2s;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+    }
+
+    @include devices(xl) {
+        @include flex(column, center, center);
+
+        position: fixed;
+        z-index: 20000;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.3);
+        pointer-events: all;
+        opacity: 0;
+        pointer-events: none;
+        transition: .2s;
+
+        &__toggler{
+            display: block;
+            position: fixed;
+            width: 60px;
+            aspect-ratio: 1/1;
+            bottom: 25px;
+            right: 25px;
+            border-radius: 100%;
+            background-color: $color--primary;
+            border: 2px solid $color--navbar;
+            color: #fff;
+        }
+
+        &.active{
+            opacity: 1;
+            pointer-events: all;
+
+            a{
+                pointer-events: all;
+            }
+        }
+
+        span{
+            display: block;
+        }
+
+        &__left,
+        &__right {
+            @include flex(column, center, flex-start);
+
+            position: static;
+            width: 90%;
+            height: auto;
+            border-radius: 0;
+            transform: translate(0);
+            box-shadow: none;
+
+            &::before{
+                display: none;
+            }
+
+            &--each{
+                @include flex(row, flex-start, center);
+            }
+
+            a {
+                @include flex(row, flex-start, flex-start);
+
+                width: auto!important;
+                padding: 10px !important;
+                border: 0 !important;
+                aspect-ratio: inherit;
+                pointer-events: none;
+
+                &:hover{
+                    transform: scale(1);
+                }
+
+                i {
+                    @include center;
+
+                    width: 30px;
+                    aspect-ratio: 1/1;
+                    font-size: 20px;
+                    margin-right: 20px;
+                }
+            }
+        }
+
+        &__left{
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        &__right{
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+    }
+    
+}

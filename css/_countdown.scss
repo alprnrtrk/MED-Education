@@ -1,0 +1,197 @@
+.countdown {
+    @include flex(row, center, center);
+
+    width: 100%;
+    position: relative;
+    z-index: 1000;
+    
+    &--each {
+        @include flex(row, center, center);
+
+        width: 50%;
+        padding: 7px 0;
+        background-color: $color--primary;
+        color: $color--body-background;
+
+        &__left {
+            @include flex(row, space-between, center);
+
+            gap: 15px;
+            padding: 35px;
+            padding-left: 0;
+            margin-left: 100px;
+            border-right: 1px solid $color--body-background;
+            color: inherit;
+
+            img {
+                width: 40px;
+                aspect-ratio: 1/1;
+
+                @include devices(lg) {
+                    display: none;
+                }
+            }
+
+            h2 {
+                font-weight: 800;
+                font-size: 24px;
+
+                @include devices(lg) {
+                    font-size: 15px;
+                }
+            }
+
+            h3 {
+                font-weight: 800;
+                font-size: 14px;
+
+                @include devices(lg) {
+                    width: min-content;
+                    font-size: 10px;
+                }
+            }
+
+            @include devices(xl) {
+                margin-left: 0;
+            }
+
+            @include devices(lg) {
+                padding: 0;
+                padding-right: 10px;
+                text-align: center
+            }
+        }
+
+        &__right {
+            @include flex(row, space-between, center);
+
+            margin-right: auto;
+            margin-left: 35px;
+
+            &>h2 {
+                margin-right: 20px;
+                writing-mode: vertical-rl;
+                text-orientation: upright;
+                font-size: 33px;
+                font-weight: 800;
+                letter-spacing: -10px;
+
+                @include devices(lg) {
+                    display: none;
+                }
+            }
+
+            div {
+                h2 {
+                    font-size: 14px;
+                    font-weight: 700;
+
+
+                    @include devices(lg) {
+                        font-size: 10px;
+                    }
+                }
+
+                ul {
+                    @include flex(row, flex-start, center);
+                    list-style: none;
+
+                    li {
+                        width: 30px;
+                        margin-right: 30px;
+                        font-size: 26px;
+                        font-weight: 700;
+                        text-align: center;
+
+                        &:last-child {
+                            margin-right: 0;
+                        }
+
+                        span {
+                            display: block;
+                            width: 100%;
+                            font-size: 13px;
+                            font-weight: 300;
+
+                            @include devices(lg) {
+                                font-size: 10px;
+                            }
+                        }
+
+                        @include devices(lg) {
+                            margin-right: 6px;
+                            font-size: 15px;
+                        }
+                    }
+                }
+
+                div {
+                    @include flex(row, space-between, center);
+
+                    margin-top: 15px;
+
+                    h2 {
+                        font-size: 12px;
+                        font-weight: 300;
+
+                        
+                        @include devices(lg) {
+                            font-size: 10px;
+                        }
+                    }
+
+                    h3 {
+                        font-size: 13px;
+
+                        
+                        @include devices(lg) {
+                            font-size: 10px;
+                        }
+                    }
+
+                    @include devices(lg) {
+                        margin-top: 5px;
+                    }
+                }
+            }
+
+            @include devices(xl) {
+                margin-right: 0;
+            }
+
+            @include devices(lg) {
+                margin-left: 10px;
+            }
+        }
+
+        &:nth-child(1) {
+            padding: 7px 0;
+            background-color: $color--secondary;
+
+            .countdown--each__left {
+                margin-left: auto;
+
+
+                @include devices(xl) {
+                    margin-left: 0;
+                }
+            }
+
+            .countdown--each__right {
+                margin-right: 100px;
+
+                @include devices(xl) {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        @include devices(xl) {
+            width: 100%;
+        }
+    }
+
+    @include devices(xl) {
+        flex-direction: column;
+    }
+}

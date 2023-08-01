@@ -1,0 +1,53 @@
+.news--other{
+    @include wrap();
+
+    background-image: none;
+
+    .wrapper {
+        @include center();
+
+        position: relative;
+        width: 100%;
+
+        &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: $color--secondary;
+        }
+
+        h2 {
+            position: relative;
+            display: block;
+            max-width: 500px;
+            width: 100%;
+            font-size: 33px;
+            font-weight: bold;
+            text-align: center;
+            background-color: $color--body-background;
+        }
+    }
+
+    .news__body__news-slider{
+        @include flex(row, flex-start, flex-start, wrap);
+
+        gap: 20px;
+
+        .news__body__news-slider--each{
+            width: calc((100% / 3) - 20px);
+            padding: 0;
+            margin-bottom: 20px;
+            list-style: none;
+
+            @include devices(xl){
+                width: 100%;
+            }
+        }
+
+        @include devices(xl){
+            @include flex(column, center, center);
+        }
+    }
+}

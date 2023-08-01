@@ -1,0 +1,80 @@
+.contact-us{
+    @include wrap;
+    @include flex(row, space-between, center);
+
+    &--sub{
+        margin-top: 50px;
+    }
+
+    ul{
+        list-style: none;
+
+        li{
+            @include flex(row, flex-start, center);
+
+            margin-bottom: 20px;
+
+            i{
+                @include center;
+
+                margin-right: 20px;
+                min-width: 40px;
+                aspect-ratio: 1/1;
+                border: 2px solid $color--primary;
+                border-radius: 100%;
+            }
+        }
+    }
+
+    img{
+        width: 70%;
+        aspect-ratio: 8/3;
+        object-fit: cover;
+
+        @include devices(xl){
+            width: 100%;
+            aspect-ratio: 1/1;
+        }
+    }
+
+    @include devices(xl){
+        @include flex(column-reverse, center, center);
+
+        gap: 20px;
+    }
+}
+
+.pre-sign--contactus{
+    margin-top: 100px;
+
+    .wrapper {
+        @include center();
+
+        position: relative;
+        width: 100%;
+
+        &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: $color--secondary;
+        }
+
+        h2 {
+            position: relative;
+            display: block;
+            max-width: 500px;
+            width: 100%;
+            font-size: 33px;
+            font-weight: bold;
+            text-align: center;
+            background-color: $color--body-background;
+        }
+    }
+    .pre-sign__form{
+        background-color: #ddd;
+    }
+}
+

@@ -1,0 +1,65 @@
+.aboutus-final {
+    @include wrap;
+
+    margin-bottom: 50px;
+
+    &__wrapper {
+        @include flex(row, space-between, center);
+
+        margin-top: 100px;
+        gap: 50px;
+        padding: 50px;
+        background-color: #ddd;
+
+
+        @include devices(xl) {
+            @include flex(column, center, center);
+
+            padding: 20px;
+        }
+    }
+
+    img {
+        width: 50%;
+        aspect-ratio: 568/326;
+        object-fit: cover;
+
+        @include devices(xl) {
+            width: 100%;
+            aspect-ratio: 1/1;
+        }
+    }
+
+    ul {
+        @include flex(column, center, flex-start);
+
+        gap: 40px;
+        width: 50%;
+
+        li {
+            @include flex();
+            list-style: none;
+
+            &::before {
+                content: "";
+                display: block;
+                max-width: 15px;
+                width: 100%;
+                aspect-ratio: 1/1;
+                margin-right: 40px;
+                background-color: $color--primary;
+                border-radius: 100%;
+
+
+                @include devices(xl) {
+                    display: none;
+                }
+            }
+        }
+
+        @include devices(xl) {
+            width: 100%;
+            text-align: center;
+        }
+    }
+}

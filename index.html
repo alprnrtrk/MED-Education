@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Sayfa</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+</head>
+
+<body>
+    <!-- başlangıç geri sayım sayacı -->
+    <header class="countdown">
+        <div class="countdown--each">
+            <a href="calculate-2.html" class="countdown--each__left">
+                <img src="img/icons/sinav-icon.svg" alt="">
+                <div>
+                    <h2>LGS</h2>
+                    <h3>Puan Hesaplama</h3>
+                </div>
+            </a>
+            <div class="countdown--each__right">
+                <h2>LGS</h2>
+                <!-- data-targetTime=""  içerisinde aşağıdaki formatta sınavların bitiş tarihi çekilecek geri sayım js tarafından yapılmaktadır-->
+                <div id="countDown1" data-targetTime="2023-06-03T23:59:59">
+                    <h2>Kalan Süre:</h2>
+                    <ul>
+                        <li id="days">
+                            51
+                            <span>Gün</span>
+                        </li>
+                        <li id="hours">
+                            51
+                            <span>Saat</span>
+                        </li>
+                        <li id="minutes">
+                            51
+                            <span>Dakika</span>
+                        </li>
+                        <li id="seconds">
+                            51
+                            <span>Saniye</span>
+                        </li>
+                    </ul>
+                    <div>
+                        <h2>LGS Sınav Tarihi :</h2>
+                        <h3>04.06.2023</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="countdown--each">
+            <a href="calculate.html" class="countdown--each__left">
+                <img src="img/icons/sinav-icon.svg" alt="">
+                <div>
+                    <h2>YKS </h2>
+                    <h3>Puan Hesaplama</h3>
+                </div>
+            </a>
+            <div class="countdown--each__right">
+                <h2>YKS</h2>
+                                <!-- data-targetTime=""  içerisinde aşağıdaki formatta sınavların bitiş tarihi çekilecek geri sayım js tarafından yapılmaktadır-->
+                <div id="countDown2" data-targetTime="2023-07-07T23:59:59">
+                    <h2>Kalan Süre:</h2>
+                    <ul>
+                        <li id="days2">
+                            51
+                            <span>Gün</span>
+                        </li>
+                        <li id="hours2">
+                            51
+                            <span>Saat</span>
+                        </li>
+                        <li id="minutes2">
+                            51
+                            <span>Dakika</span>
+                        </li>
+                        <li id="seconds2">
+                            51
+                            <span>Saniye</span>
+                        </li>
+                    </ul>
+                    <div>
+                        <h2>YKS Sınav Tarihi :</h2>
+                        <h3>07.07.2023</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- bitiş geri sayım sayacı -->
+
+    <!-- başlangıç navbar -->
+    <section class="navbar">
+        <a class="navbar__logo" href="index.html">
+            <picture>
+                <!-- tablet ve mobil için küçük logo -->
+                <source media="(max-width: 1500px)" srcset="img/logos/logo-mid.png">
+                <!-- masa üstü için geniş logo -->
+                <source media="(max-width: 1900px)" srcset="img/logos/logo.png">
+                <img src="img/logos/logo.png" alt="IfItDoesntMatchAnyMedia">
+            </picture>
+        </a>
+        <div class="navbar__collapse">
+            <ul class="navbar__collapse__navs">
+                <!-- "mega-menu içerisinde mega menu alt elementi olacak" -->
+                <li class="navbar__collapse__navs--each mega-menu">
+                    <a>Kurumsal <i class="fa-solid fa-down"></i></a>
+                    <div class="mega-menu">
+                        <ul class="mega-menu__list">
+                            <!-- alt menu tekrarlanacak element "mega-menu__list--each" -->
+                            <li class="mega-menu__list--each">
+                                <i class="fa-solid fa-arrow-right"></i><a href="about-us.html">Hakkımızda</a>
+                            </li>
+                            <li class="mega-menu__list--each">
+                                <i class="fa-solid fa-arrow-right"></i><a href="from-overseer.html">Genel Müdürden</a>
+                            </li>
+                            <li class="mega-menu__list--each">
+                                <i class="fa-solid fa-arrow-right"></i><a href="our-succession.html">Başarılarımız</a>
+                            </li>
+                            <li class="mega-menu__list--each">
+                                <i class="fa-solid fa-arrow-right"></i><a href="franchise.html">Franchise</a>
+                            </li>
+                            <li class="mega-menu__list--each">
+                                <i class="fa-solid fa-arrow-right"></i><a href="e-catalog.html">E-Katalog</a>
+                            </li>
+                            <li class="mega-menu__list--each">
+                                <i class="fa-solid fa-arrow-right"></i><a href="news.html">Haber Etkinlikler</a>
+                            </li>
+                        </ul>
+                        <!-- mega menu için resim -->
+                        <img src="img/megamenu/megamenu1.png" alt="">
+                    </div>
+                </li>
+                <!-- tekrarlanacak element "navbar__collapse__navs--each" -->
+                <li class="navbar__collapse__navs--each">
+                    <a href="locations.html">Kurumlarımız</a>
+                </li>
+                <li class="navbar__collapse__navs--each">
+                    <a href="guidence.html">Rehberlik</a>
+                </li>
+                <li class="navbar__collapse__navs--each">
+                    <a href="store.html">Med Store</a>
+                </li>
+                <li class="navbar__collapse__navs--each">
+                    <a href="ik.html">İnsan Kaynakları</a>
+                </li>
+                <li class="navbar__collapse__navs--each">
+                    <a href="contact-us.html">İletişim</a>
+                </li>
+                <li class="navbar__collapse__navs--each special">
+                    <a href="pre-sign.html">Online Başvuru</a>
+                </li>
+            </ul>
+            <!-- fixed links sayfada sabit dönen sosyal medya ikonları ve iletişim  bilgilerinin bulunduğu element -->
+            <div class="fixed-links">
+                <ul class="fixed-links__left">
+                    <li class="fixed-links__left--each">
+                        <a target="_blank" href="#">
+                            <i class="fa-solid fa-phone"></i>
+                            <!-- masa üstünde yalnızca ikonlar var lakin mobilde <span></span> içeriisndeki bilgiler gözükecektir -->
+                            <span>0000 000 00 00</span>
+                        </a>
+                    </li>
+                    <li class="fixed-links__left--each">
+                        <a target="_blank" href="#">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>mail adresi</span>
+                        </a>
+                    </li>
+                    <li class="fixed-links__left--each">
+                        <a target="_blank" href="#">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>lokasyon</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="fixed-links__right">
+                    <li class="fixed-links__right--each">
+                        <a target="_blank" href="#">
+                            <i class="fa-brands fa-facebook-f"></i>
+                            <span>facebook adı</span>
+                        </a>
+                    </li>
+                    <li class="fixed-links__right--each">
+                        <a target="_blank" href="#">
+                            <i class="fa-brands fa-twitter"></i>
+                            <span>twitter adı</span>
+                        </a>
+                    </li>
+                    <li class="fixed-links__right--each">
+                        <a target="_blank" href="#">
+                            <i class="fa-brands fa-instagram"></i>
+                            <span>instagram adı</span>
+                        </a>
+                    </li>
+                    <li class="fixed-links__right--each">
+                        <a target="_blank" href="#">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                            <span>linkdin hesabı</span>
+                        </a>
+                    </li>
+                    <li class="fixed-links__right--each">
+                        <a target="_blank" href="#">
+                            <i class="fa-brands fa-youtube"></i>
+                            <span>youtube adresi</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- mobil için menu açma kapama tuşu -->
+        <button class="toggle">
+            <span></span><span></span><span></span>
+        </button>
+    </section>
+    <!-- bitiş navbar -->
+
+    <!-- başangıl ana sayfa slider -->
+    <!-- navbar altındaki sayfanın ilk elemetine "page-content" classı eklememiz gerekiyor -->
+    <section class="intro page-content">
+        <ul class="slider">
+            <!-- tekrarlanacak element "each" -->
+            <li class="each">
+                <picture>
+                    <!-- mobil de gözükecek resim -->
+                    <source media="(max-width: 1200px)" srcset="img/sliders/med-mobil-slider.jpg">
+                    <!-- bilgsiyar da gözükecek resim -->
+                    <img src="img/sliders/banner.jpg" alt="IfItDoesntMatchAnyMedia">
+                </picture>
+            </li>
+            <li class="each">
+                <picture>
+                    <source media="(max-width: 1200px)" srcset="img/sliders/med-mobil-slider.jpg">
+                    <img src="img/sliders/banner.jpg" alt="IfItDoesntMatchAnyMedia">
+                </picture>
+            </li>
+            <li class="each">
+                <picture>
+                    <source media="(max-width: 1200px)" srcset="img/sliders/med-mobil-slider.jpg">
+                    <img src="img/sliders/banner.jpg" alt="IfItDoesntMatchAnyMedia">
+                </picture>
+            </li>
+            <li class="each">
+                <picture>
+                    <source media="(max-width: 1200px)" srcset="img/sliders/med-mobil-slider.jpg">
+                    <img src="img/sliders/banner.jpg" alt="IfItDoesntMatchAnyMedia">
+                </picture>
+            </li>
+        </ul>
+    </section>
+    <!-- bitiş ana sayfa slider -->
+
+    <!-- başlangıç neden biz -->
+    <section class="why-us">
+        <ul class="why-us__slider-circles">
+            <!-- tekrarlaancak element "why-us__slider-circles__circle" -->
+            <!-- bu alanda yalnızca 3 element olacak ve left center rigt classlarını gözükecek elementlerin sırlamasına uygun olarak yerşletirelim -->
+            <li class="why-us__slider-circles__circle left">
+                <a href="calendar.html">
+                    <img src="img/icons/Group 3.png" alt="">
+                    <h2>Akademik Takvim</h2>
+                </a>
+            </li>
+            <li class="why-us__slider-circles__circle center">
+                <a href="calculate.html"> <img src="img/icons/Group 5.png" alt="">
+                    <h2>Puan Hesaplama</h2>
+                </a>
+            </li>
+            <li class="why-us__slider-circles__circle right">
+                <a href="locations.html">
+                    <img src="img/icons/Group 8.png" alt="">
+                    <h2>Eğitim Kurumlarımız</h2>
+                </a>
+            </li>
+        </ul>
+        <div class="why-us__body">
+            <!-- <span></span> elementi içerisinde özel renkle gözükecek yazı konumlanacaktır -->
+            <h1 class="why-us__body__title">NEDEN MED <span>EĞİTİM
+                    KURUMLARI?</span></h1>
+            <p class="why-us__body__desc">Modern Eğitim Dünyası öğrenci merkezli çalışmalarıyla akademik eğitimin yanı
+                sıra öğrenciyi
+                geleceğe daha sağlıklı yetiştiren bir kurumdur. Bireyler birbirinden farklı kişilik özelliklerine,
+                çalışma prensiplerine sahiptir.
+                Bu doğrultuda öğrenci-veli-öğretmen işbirliği ile öğrencimizi bu yolculuğunda başarıya ulaştırmayı
+                hedefliyoruz.</p>
+        </div>
+        <ul class="tag-slider">
+            <!-- tekrarlanacak element "tag-slider__each" ve her elemente özel bir arkaplan resmi çekilecektir css tarafından değil html tarafında çekeceğiz yapı zaten hazır -->
+            <li class="tag-slider__each">
+                <a style="background-image: url('img/assets/filtered.jpg');">Deneme Sınavlar</a>
+            </li>
+            <li class="tag-slider__each">
+                <a style="background-image: url('img/assets/filtered.jpg');">Yeni Nesil ilelikli Yayınla</a>
+            </li>
+            <li class="tag-slider__each">
+                <a style="background-image: url('img/assets/filtered.jpg');">Sınavlara ve Okula Takviye
+                    Hazırlık Programlan </a>
+            </li>
+            <li class="tag-slider__each">
+                <a style=" background-image: url('img/assets/filtered.jpg');">ölçme ve
+                    DeğerIendirme Sistemi</a>
+            </li>
+            <li class="tag-slider__each">
+                <a style="background-image: url('img/assets/filtered.jpg');">ölçme ve
+                    erlendirme Sistem </a>
+            </li>
+            <li class="tag-slider__each">
+                <a style=" background-image: url('img/assets/filtered.jpg');">Psikolojik Danış nlık
+                    ve Rehberlik irimi</a>
+            </li>
+        </ul>
+    </section>
+    <!-- bitiş neden biz -->
+
+    <!-- başlangıç haberler ve etkinlikler -->
+    <section class="news">
+        <div class="news__head">
+            <h2>Haber ve Duyurular</h2>
+            <a href="news.html">Tüm Haberler</a>
+        </div>
+        <div class="news__body">
+            <ul class="news__body__news-slider">
+                <!-- tekrarlanacka element "news__body__news-slider--each" -->
+                <li class="news__body__news-slider--each">
+                    <img src="img/sliders/2e17468a178893048f3c26b2cde14748.jpg" alt="">
+                    <h2>Yılın Eğitim  Eğitim Kurumu MED
+                        Eğitim Kurumları Yılın Eğitim Kurumu MED
+                        Eğitim Kurumları Kurumları KurumlarıKurumları Kurumu MED
+                        Eğitim Kurumları Yılın Eğitim Kurumu MED
+                        Eğitim Kurumları Kurumları KurumlarıKurumları </h2>
+                    <div class="news__body__news-slider--each__bottom">
+                        <h2>Kasım 2023</h2>
+                        <a href="news-detail.html">Haber Detayı</a>
+                    </div>
+                </li>
+                <li class="news__body__news-slider--each">
+                    <img src="img/sliders/2e17468a178893048f3c26b2cde14748.jpg" alt="">
+                    <h2>Yılın Eğitim Kurumu MED
+                        Eğitim Kurumları</h2>
+                    <div class="news__body__news-slider--each__bottom">
+                        <h2>Kasım 2023</h2>
+                        <a href="news-detail.html">Haber Detayı</a>
+                    </div>
+                </li>
+                <li class="news__body__news-slider--each">
+                    <img src="img/sliders/2e17468a178893048f3c26b2cde14748.jpg" alt="">
+                    <h2>Yılın Eğitim Kurumu MED
+                        Eğitim Kurumları</h2>
+                    <div class="news__body__news-slider--each__bottom">
+                        <h2>Kasım 2023</h2>
+                        <a href="news-detail.html">Haber Detayı</a>
+                    </div>
+                </li>
+                <li class="news__body__news-slider--each">
+                    <img src="img/sliders/2e17468a178893048f3c26b2cde14748.jpg" alt="">
+                    <h2>Yılın Eğitim Kurumu MED
+                        Eğitim Kurumları</h2>
+                    <div class="news__body__news-slider--each__bottom">
+                        <h2>Kasım 2023</h2>
+                        <a href="news-detail.html">Haber Detayı</a>
+                    </div>
+                </li>
+                <li class="news__body__news-slider--each">
+                    <img src="img/sliders/2e17468a178893048f3c26b2cde14748.jpg" alt="">
+                    <h2>Yılın Eğitim Kurumu MED
+                        Eğitim Kurumları</h2>
+                    <div class="news__body__news-slider--each__bottom">
+                        <h2>Kasım 2023</h2>
+                        <a href="news-detail.html">Haber Detayı</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="news__head">
+            <h2>Etkinlikler</h2>
+            <a href="events.html">Tüm Etkinlikler</a>
+        </div>
+        <div class="news__body-events">
+            <ul class="news__body-events__slider">
+                <!-- tekrarlanacak element news__body-events__slider--each -->
+                <li class="news__body-events__slider--each">
+                    <a href="news-detail.html">
+                        <img src="img/sliders/2e17468a178893048f3c26b2cde14748.jpg" alt="">
+                        <div class="news__body-events__slider--each__bottom">
+                            <h2>Oryantasy on ve rehberlik birimi
+                                tanıtımı semineri</h2>
+                        </div>
+                    </a>
+                    <li class="news__body-events__slider--each">
+                        <a href="news-detail.html">
+                            <img src="img/sliders/2e17468a178893048f3c26b2cde14748.jpg" alt="">
+                            <div class="news__body-events__slider--each__bottom">
+                                <h2>Oryantasy on ve rehberlik birimi
+                                    tanıtımı semineri</h2>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="news__body-events__slider--each">
+                        <a href="news-detail.html">
+                            <img src="img/sliders/2e17468a178893048f3c26b2cde14748.jpg" alt="">
+                            <div class="news__body-events__slider--each__bottom">
+                                <h2>Oryantasy on ve rehberlik birimi
+                                    tanıtımı semineri</h2>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="news__body-events__slider--each">
+                        <a href="news-detail.html">
+                            <img src="img/sliders/2e17468a178893048f3c26b2cde14748.jpg" alt="">
+                            <div class="news__body-events__slider--each__bottom">
+                                <h2>Oryantasy on ve rehberlik birimi
+                                    tanıtımı semineri</h2>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="news__body-events__slider--each">
+                        <a href="news-detail.html">
+                            <img src="img/sliders/2e17468a178893048f3c26b2cde14748.jpg" alt="">
+                            <div class="news__body-events__slider--each__bottom">
+                                <h2>Oryantasy on ve rehberlik birimi
+                                    tanıtımı semineri</h2>
+                            </div>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </section>
+    <!-- bitiş haberler ve etkinlikler -->
+
+    <!-- başlangıç ana sayfa banner -->
+    <section class="quote">
+        <img src="img/assets/flag.png" alt="">
+        <div class="text">
+            <h2>Modern Eğitim Anlayışımızla<br>
+                Francahise Ağımızı Büyütüyoruz.</h2>
+            <h3>BERABER BÜYÜYELİM!</h3>
+            <a href="franchise.html">Francahise Olun</a>
+        </div>
+    </section>
+    <!-- bitiş ana sayfa banner -->
+
+    <!-- başlangıç katalog linki -->
+    <section class="block-links">
+        <!-- background-img html tarafından gerekirse değiştirlebilmeli -->
+        <div class="block-links__dynamic" style="background-image: url(img/Group\ 774.jpg);">
+            <img src="img/Mask Group 1.png" alt="">
+            <div class="content">
+                <h2>
+                    Online
+                    Kataloğumuzu
+                    İndirin.
+                </h2>
+                <a href="e-catalog.html">
+                    <img src="img/Group 1.png" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="block-links__dynamic" style="background-image: url(img/Group\ 774.jpg);">
+            <img src="img/Mask Group 1.png" alt="">
+            <div class="content">
+                <h2>
+                    Online
+                    Kataloğumuzu
+                    İndirin.
+                </h2>
+                <a href="e-catalog.html">
+                    <img src="img/Group 1.png" alt="">
+                </a>
+            </div>
+        </div>
+
+        </div>
+    </section>
+    <!-- bitiş katalog linki -->
+
+    <!-- başlangıç yorumlar -->
+    <section class="comments">
+        <div class="comments__title">
+            <h2>Oğrencİ Yorumları</h2>
+        </div>
+
+        <ul class="comments__list">
+            <!-- tekrarlanacak element "card" -->
+            <li class="card">
+                <div class="card__head">
+                    <img src="img/student.avif" alt="">
+                </div>
+                <div class="card__body">
+                    <p>Lorem ipsum is placeholder text commonly used in
+                        the graphic, print, and publishing industries for
+                        previewing layouts and visual mockups.</p>
+                    <h3>Lorem psum</h3>
+                </div>
+            </li>
+            <li class="card">
+                <div class="card__head">
+                    <img src="img/student.avif" alt="">
+                </div>
+                <div class="card__body">
+                    <p>Lorem ipsum is placeholder text commonly used in
+                        the graphic, print, and publishing industries for
+                        previewing layouts and visual mockups.</p>
+                    <h3>Lorem psum</h3>
+                </div>
+            </li>
+            <li class="card">
+                <div class="card__head">
+                    <img src="img/student.avif" alt="">
+                </div>
+                <div class="card__body">
+                    <p>Lorem ipsum is placeholder text commonly used in
+                        the graphic, print, and publishing industries for
+                        previewing layouts and visual mockups.</p>
+                    <h3>Lorem psum</h3>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <!-- bitiş yorumlar -->
+
+    <!-- başlangıç footer -->
+    <footer class="footer">
+        <div class="footer__com">
+            <img src="img/logos/Image 4.png" alt="">
+            <h2 class="adress">
+                Merkez Mh. Atlas Sk. No:2-4
+                Gaziosmanpaşa / İSTANBUL
+            </h2>
+            <h2 class="phone">
+                212 563 09 08
+            </h2>
+            <h2 class="mail">
+                <a href="#">info@medegitim.com.tr</a>
+            </h2>
+        </div>
+        <div class="footer__links">
+            <ul class="list">
+                <!-- bu kısımda bir ince var umarım sorun yaratmaz lakin -->
+                <!-- listenin ilk <li></li> elementi başlık olacak şekilde tasarladık yani liste repeat ederken ilk elemnt her zaman "list__each list__each--title" olacak şekilde ayarlamamız lazım geri kalanlar ise DB den çekilecek -->
+                <li class="list__each list__each--title"><a href="index.html">Anasayfa</a></li>
+                <li class="list__each">
+                    <a href="about-us.html">
+                        Hakkımızda
+                    </a>
+                </li>
+                <li class="list__each">
+                    <a href="contact-us.html">
+                        iletişim
+
+                    </a>
+                </li>
+                <li class="list__each">
+                    <a href="news.html">
+                        Haberler
+                    </a>
+                </li>
+                <li class="list__each">
+                    <a href="events.html">
+                        Etkinlikler
+                    </a>
+                </li>
+                <li class="list__each">
+                    <a href="franchise.html">
+                        Franchise
+                    </a>
+                </li>
+                <li class="list__each">
+                    <a href="ik.html">
+                        insan Kaynaklan
+                    </a>
+                </li>
+                <li class="list__each">
+                    <a href="guidence.html">
+                        Rehberlik Servisi
+                    </a>
+                </li>
+            </ul>
+            <ul class="list">
+                <li class="list__each list__each--title"><a href="404.html">Eğitimler</a></li>
+                <li class="list__each">
+                    <a href="404.html">
+                        7. Sınıf Eğitim Programı
+                    </a>
+                </li>
+                <li class="list__each">
+                    <a href="404.html">
+                        8. Sınıf Eğitim Programı
+                    </a>
+                </li>
+                <li class="list__each">
+                    <a href="404.html">
+                        9. Sınıf Eğitim Programı
+                    </a>
+                </li>
+                <li class="list__each">
+                    <a href="404.html">
+                        10. Sınıf Eğitim Prcwamı
+                    </a>
+                </li>
+                <li class="list__each">
+                    <a href="404.html">
+                        11. Sınıf Eğitim Prcwamı
+                    </a>
+                </li>
+                <li class="list__each">
+                    <a href="404.html">
+                        12. Sınıf Eğitim Prcwamı
+                    </a>
+                </li>
+                <li class="list__each">
+                    <a href="404.html">
+                        Mezun Grubu Eğitim Programı
+                    </a>
+                </li>
+            </ul>
+            <ul class="list list--big">
+                <li class="list__each list__each--title"><a href="404.html">Son Eklenen Şubeler</a></li>
+                <li class="list__each">
+                    <a href="404.html">
+
+                        ANKARA – Ahi Mesut / Etimesgut Şubesi
+                    </a>
+                </li>
+                <li class="list__each">
+                    <a href="404.html">
+                        ANKARA – Eryaman Şubesi
+                    </a>
+                </li>
+                <li class="list__each">
+                    <a href="404.html">
+                        ANKARA – Yenimahalle Şubesi
+                    </a>
+                </li>
+                <li class="list__each">
+                    <a href="404.html">
+                        ANKARA – Gölbaşı Şubesi
+                    </a>
+                </li>
+                <li class="list__each">
+                    <a href="404.html">
+                        DİYARBAKIR – Yenişehir Şubesi
+                    </a>
+                </li>
+                <li class="list__each">
+                    <a href="404.html">
+                        İSTANBUL – Ataşehir / Kayışdağı Şubesi
+                    </a>
+                </li>
+                <li class="list__each">
+                    <a href="404.html">
+                        İSTANBUL – Avcılar Şubesi
+
+                    </a>
+                </li>
+                <li class="list__each">
+                    <a href="404.html">
+
+                        ANKARA – Ahi Mesut / Etimesgut Şubesi
+                    </a>
+                </li>
+                <li class="list__each">
+                    <a href="404.html">
+                        ANKARA – Eryaman Şubesi
+                    </a>
+                </li>
+                <li class="list__each">
+                    <a href="404.html">
+                        ANKARA – Yenimahalle Şubesi
+                    </a>
+                </li>
+                <li class="list__each">
+                    <a href="404.html">
+                        ANKARA – Gölbaşı Şubesi
+                    </a>
+                </li>
+                <li class="list__each">
+                    <a href="404.html">
+                        DİYARBAKIR – Yenişehir Şubesi
+                    </a>
+                </li>
+                <li class="list__each">
+                    <a href="404.html">
+                        İSTANBUL – Ataşehir / Kayışdağı Şubesi
+                    </a>
+                </li>
+                <li class="list__each">
+                    <a href="404.html">
+                        İSTANBUL – Avcılar Şubesi
+
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer__bottom">
+            <div class="links">
+                <a href="404.html">KVKK</a>
+                <a href="404.html"> Çerez Politikası</a>
+            </div>
+            <div class="trademark">
+                COPYRIGHT @ 2022 MED EĞİTİM KURUMLARI | Tüm Hakları Saklıdır.
+
+            </div>
+        </div>
+        <a href="404.html" class="whatsapp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </footer>
+    <!-- bitiş footer -->
+
+    <!-- başlangıç mobil sosyal medya açma tuşu -->
+    <!-- bu button elementi her sayfada bulunsun zira mobilde sosyal medya kısmını açacak tuş olduğu için her sayfada bulumalu -->
+    <button class="fixed-links__toggler">
+        <i class="fa-solid fa-share-nodes"></i>
+    </button>    
+    <!-- bitiş mobil sosyal medya açma tuşu -->
+
+    <script src="js/query.js"></script>
+    <script src="js/slick.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://kit.fontawesome.com/89424def0a.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

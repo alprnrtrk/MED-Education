@@ -1,0 +1,66 @@
+.e-catalog{
+    @include wrap();
+
+    margin-bottom: 100px;
+
+    &__wrapper{
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16/9;
+        background-size: 100% 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+    
+        a{
+            position: absolute;
+            bottom: 0;
+            transform: translateY(50%);
+            padding: 35px;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: $color--primary;
+            color: #fff;
+
+            overflow: hidden;
+
+            &::before{
+                position: absolute;
+                z-index: -1;
+                top: 0;
+                left: -100%;
+                content: "";
+                display: block;
+                width: 100%;
+                height: 100%;
+                background-color: #fff;
+                transition: .2s;
+            }
+
+            &:hover{
+                color: $color--primary;
+
+                &::before{
+                    left: 0;
+                }
+            }
+
+            i{
+                font-size: 18px;
+                margin-right: 20px;
+            }
+
+            @include devices(xl){
+                width: 100%;
+                padding: 10px;
+                font-size: 15px;
+                text-align: center;
+            }
+        }
+
+        @include devices(xl){
+            aspect-ratio: 1/1;
+            background-size: cover;
+            background-position: center center;
+        }
+    }
+}

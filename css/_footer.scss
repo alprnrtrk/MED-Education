@@ -1,0 +1,192 @@
+.footer {
+    @include wrap();
+    @include flex(row, space-between, flex-start, wrap);
+
+    position: relative;
+    padding-top: 60px!important;
+
+    background-color: $color--secondary;
+    color: #fff;
+
+    &__com {
+        width: 20%;
+
+        img {
+            max-width: 100px;
+            width: 100%;
+        }
+
+        h2 {
+            font-size: 14px;
+            font-weight: normal;
+            color: #ffffff;
+            margin: 30px 0;
+        }
+
+        a{
+            color: #fff;
+        }
+
+        .adress {}
+
+        .phıne {}
+
+        .mail {}
+
+        @include devices(xl){
+            @include flex(column, center, center);
+
+            width: 100%;
+            text-align: center;
+
+            h2{
+                margin: 10px 0;
+            }
+        }
+    }
+
+    &__links {
+        @include flex(row, flex-start, flex-start);
+
+        width: 80%;
+
+        .list {
+            margin-top: 20px;
+            width: 25%;
+
+            list-style: none;
+
+            &__each {
+                margin: 15px 5px;
+
+                &--title {
+                    margin-top: -20px;
+                    margin-bottom: 30px;
+
+                    a{
+                        font-weight: bolder;
+                        font-size: 18px!important;
+                    }
+                }
+
+                a {
+                    font-size: 14px;
+                    color: #fff;
+                    text-transform: capitalize;
+                    transition: .2s;
+                    
+                    &:hover{
+                        text-shadow: 0 0 20px #fff;
+                        margin-left: 5px;
+                    }
+                }
+            }
+
+            &--big {
+                @include flex(column, flex-start, flex-start, wrap);
+
+                width: 50%;
+                max-height: 400px;
+
+                li {
+                    width: 50%;
+
+                    &:nth-child(2){
+                        margin-top: -15px;
+                    }
+
+                    @include devices(xl){
+                        width: 100%;
+
+                        &:nth-child(2){
+                            margin-top: 0;
+                            margin-bottom: 15px;
+                        }
+                    }
+                }
+            }
+
+            @include devices(xl){
+                @include flex(column, flex-start, flex-start, nowrap);
+
+                width: 100%;
+                max-height: 100%;
+                margin: 50px 0;
+            }
+        }
+
+        @include devices(xl){
+            @include flex(column, center, center);
+
+            width: 100%;
+        }
+    }
+
+    &__bottom {
+        @include flex(row, space-between, center);
+
+        margin-top: 50px;
+        padding: 30px 0;
+        width: 100%;
+        border-top: 1px solid #fff;
+
+        .links {
+            @include flex(row, space-between, center);
+
+            a {
+                color: #fff;
+                margin: 0 10px;
+                font-size: 12px;
+            }
+        }
+
+        .trademark {
+            font-size: 12px;
+        }
+
+        @include devices(xl){
+            @include flex(column, center, center);
+            text-align: center;
+
+            *{
+                margin: 5px 0;
+            }
+        }
+    }
+
+    .whatsapp{
+        @include center;
+        position: absolute;
+        top: 0;
+        right: 70px;
+        transform: translateY(-50%);
+        color: #fff;
+        background-color: #27d045;
+        width: 100px;
+        aspect-ratio: 1/1;
+        border-radius: 100%;
+        
+        i{
+            font-size: 50px;
+        }
+
+        @include devices(xl){
+            display: none;
+        }
+    }
+
+    @include devices(xl){
+        @include flex(column, center, center);
+    }
+
+    &--sub{
+        padding-top: 0!important;
+        background-color: #112a81;
+        
+        .footer__bottom{
+            margin-top: 0;
+            border: 0;
+
+        }
+    }
+}

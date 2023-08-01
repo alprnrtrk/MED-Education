@@ -1,0 +1,45 @@
+.aboutus-intro{
+    @include wrap;
+
+    img{
+        width: 100%;
+        object-fit: cover;
+
+        @include devices(xl){
+            aspect-ratio: 1/1;
+        }
+    }
+
+    &__content{
+        @include flex(row, center, flex-start);
+
+        p{
+            @include flex();
+
+            gap: 20px;
+            max-width: 930px;
+            width: 100%;
+            padding: 50px 0;
+            text-align: center;
+            font-size: 25px;
+            font-weight: 300;
+            line-height: 35px;
+            color: $color--secondary;
+
+            &::before, &::after{
+                content: "";
+                display: block;
+                min-width: 75px;
+                aspect-ratio: 1/1;
+                background-image: url(/img/assets/quote.png);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center center;
+
+                @include devices(xl){
+                    display: none;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,299 @@
+.branch-title{
+    @include wrap;
+
+    .wrapper{
+        @include flex(row, space-between, flex-end);
+
+        width: 100%;
+        padding-bottom: 25px;
+        margin-bottom: 50px;
+        border-bottom: 2px solid $color--primary;
+
+        @include devices(xl){
+            @include flex(column-reverse, center, center);
+            
+            gap: 20px;
+            text-align: center;
+        }
+    }
+
+    div{
+        *{
+            font-size: 23px;
+        }
+
+        h1{
+            color: $color--primary;
+            margin: 0;
+        }
+        h3{
+            font-size: 13px;
+        }
+    }
+
+    h3{
+        font-weight: 400;
+    }
+}
+
+.branch-content{
+     @include wrap;
+
+    margin-bottom: 50px;
+
+     img{
+        width: 100%;
+        aspect-ratio: 13/6;
+        object-fit: cover;
+
+        @include devices(xl){
+            aspect-ratio: 1/1;
+        }
+     }
+
+     p{
+        padding: 45px 0;
+        font-size: 18px;
+        font-weight: 400;
+     }
+
+     div{
+        @include flex(row, space-between, center);
+
+        margin-top: 15px;
+        gap: 50px;
+
+        img{
+            width: calc((100% - 50px) / 2);
+            aspect-ratio: 13/6;
+            object-fit: cover;
+
+            @include devices(xl){
+                width: 100%;
+                aspect-ratio: 1/1;
+
+            }
+        }
+
+        @include devices(xl){
+            @include flex(column, center, center);
+        }
+     }
+}
+
+.branch-grid{
+    @include wrap;
+
+    margin-bottom: 50px;
+
+    ul{
+        @include flex(row, center, stretch);
+
+        gap: 10px;
+
+        .branch-grid__item{
+            width: calc((100% - 10px) / 3);
+
+            color: #fff;
+
+            &--left,&--right{
+                @include flex(column, space-between, center);
+
+                a{
+                    color: #fff;
+                }
+
+                div{
+                    @include flex(row, flex-start, center);
+
+                    width: 100%;
+                    height: calc(50% - 5px);
+                    padding-left: 50px;
+                    background-color: $color--secondary;
+
+                    h2{
+                        padding: 10px;
+                        font-size: 16px;
+                        font-weight: 400;
+                    }
+
+                    i{
+                        @include center;
+                        
+                        min-width: 60px;
+                        aspect-ratio: 1/1;
+                        margin-right: 25px;
+                        border: 2px solid #fff;
+                        border-radius: 100%;
+                        font-size: 25px;
+
+                        @include devices(xl){
+                            margin: 0 0 10px 0;
+                        }
+                    }
+                    
+                    @include devices(xl){
+                        @include flex(column, center, center);
+
+                        aspect-ratio: 1/1;
+                        padding: 10px;
+                        text-align: center;
+                    }
+                }
+
+                @include devices(xl){
+                    @include flex(column, center, center);
+
+                    gap: 10px
+                }
+            }
+
+            &--left{
+                align-items: flex-start;
+            }
+
+            &--right{
+                align-items: flex-end;
+            }
+
+            &--center{
+
+                position: relative;
+                aspect-ratio: 1/1;
+                background-color: $color--primary;
+                overflow: hidden;
+
+                &::before{
+                    content: "";
+                    position: absolute;
+                    top: -100%;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    background-color: $color--secondary;
+                    transition: .2s;
+                    z-index: 0;
+                }
+
+                &:hover{
+                    &::before{
+                        top: 0;
+                    }
+                    
+                    a{
+                        transform: scale(1.1);
+                    }
+                }
+
+                a{
+                    @include flex(column, center, center);
+
+                    position: relative;
+                    z-index: 1;
+                    width: 100%;
+                    height: 100%;
+                    color: #fff;
+                    transition: .2s;
+
+                    img{
+                        width: 100px;
+                        align-self: 1/1;
+                        object-fit: cover;
+                        margin-bottom: 20px;
+                    }
+    
+                    h2{
+                        max-width: 150px;
+                        width: 100%;
+                        font-size: 27px;
+                        text-align: center;
+                    }
+                }
+
+                @include devices(xl){
+                    order: -1;
+                }
+            }
+
+            @include devices(xl){
+                width: 100%;
+            }
+        }
+
+        @include devices(xl){
+            @include flex(column, center, center);
+        }
+    }
+
+    .btn{
+        max-width: max-content;
+        margin: auto;
+        margin-top: 20px;
+        padding: 20px 40px;
+        background-color: $color--secondary;
+        color: #fff;
+        border-radius: 100px;
+        transition: .2s;
+
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+}
+
+.locations--branch{
+    margin: 0 -10px;
+
+    li{
+        padding: 10px;
+    }
+
+    .slick-dots {
+        @include flex(row, center, center);
+
+        width: min-content;
+        margin: auto;
+        padding-top: 20px;
+        list-style: none;
+
+        li{
+            padding: 0;
+        }
+
+        .slick-active {
+            button {
+                &::before {
+                    background-color: $color--primary;
+                }
+            }
+        }
+
+        button {
+            background-color: transparent;
+            color: transparent;
+            border: 0;
+            cursor: pointer;
+
+            &:hover {
+
+                &::before {
+                    background-color: $color--primary;
+                }
+
+            }
+
+            &::before {
+                content: "";
+                display: block;
+                width: 20px;
+                border-radius: 100%;
+                margin: 0 2px;
+                aspect-ratio: 1/1;
+                background-color: #c4c4cc;
+                border: 2px solid #fff;
+                transition: .2s;
+            }
+        }
+    }
+}
